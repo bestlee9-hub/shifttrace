@@ -1,0 +1,4 @@
+08:18:10.010 INFO [A17 E01] Controller issued clamp CLOSED request; physical position not recorded.
+08:18:10.240 WARN [A17 E02] Clamp position feedback missing; no CLOSED confirmation received.
+08:18:11.240 ERROR [A17 E03] Interlock wait timed out; cycle A17 stopped.
+10:47:02.810 ERROR [A18 E04] After restart, camera trigger response timed out in cycle A18.

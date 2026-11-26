@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#16251f"><title>Shifttrace | Equipment log handoff</title></head>
+<body>
+<header class="mast"><div class="mast-inner"><a class="brand" href="./"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#d8fa95"/><path d="M5 15h5l3-6 3 10 3-4h4" fill="none" stroke="#182a21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Shifttrace</a><span>Equipment diagnostics</span></div></header>
+<main>
+<div class="intro"><h1>Equipment log handoff</h1><p>Separate first signals from follow-on alarms. Give the next shift a trace they can check.</p></div>
+<div class="workspace">
+<form id="editor">
+<div class="pane-title"><h2>Source log</h2><button id="sample" type="button" class="subtle">Load sample</button></div>
+<label for="logs" class="sr">English equipment log</label>
+<textarea id="logs" rows="14" maxlength="24000" spellcheck="false" placeholder="Paste a fictional English equipment log. Put one event on each line."></textarea>
+<p id="counts" class="metadata"></p>
+<div class="mode"><label for="mode">Analysis mode</label><select id="mode"><option value="sample">Local sample · no AI</option><option value="hybrid" id="hybrid">Firebase hybrid</option></select></div>
+<p id="privacy" class="metadata">Sample mode never sends your log anywhere.</p>
+<div class="model-panel" id="model-panel" hidden>
+<div class="model-head"><h3>On-device model</h3><button id="prepare" type="button" class="subtle">Prepare model</button></div>
+<p id="model-status" role="status" class="model-status"></p>
+<progress id="model-progress" aria-label="On-device model download progress" max="100" hidden></progress>
+</div>
+<div class="actions"><button id="run" class="primary" type="submit">Analyze log</button><button id="clear" class="subtle" type="button">Clear</button></div>
+</form>
+<section class="output" aria-labelledby="out-label">
+<div class="pane-title"><h2 id="out-label">Shift handoff</h2><button id="copy" type="button" class="subtle" disabled>Download handoff</button></div>
+<p id="status" role="status" class="status"></p><div id="results"></div>
+</section>
+</div>
+<footer>For training and demonstration. Not a verified diagnosis or a machine-control tool.</footer>
+</main>
+<script type="module" src="./src/main.js"></script></body></html>
